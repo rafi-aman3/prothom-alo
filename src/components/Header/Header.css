@@ -7,3 +7,8 @@ img {
     width: 260px;
     height: 65px;
 }
+
+.borderLine {
+    height: 1px;
+    background: #e2e2e2;
+}

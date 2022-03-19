@@ -12,7 +12,7 @@ function Header() {
                 </h2>
             </a>
         </div>
-
+        <div className='borderLine'></div>
     </header>
   )
 }

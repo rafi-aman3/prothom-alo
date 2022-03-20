@@ -12,7 +12,22 @@ function NewsContainer() {
 
     const leadStory = newsData.find(obj => {
         return obj.sort === 3;
-    });    
+    });
+
+    const secondStory = newsData.find(obj => {
+        return obj.sort === 1;
+    });
+
+    const noImageStory = newsData.filter(obj => {
+        return obj.sort > 1 && obj.sort < 7 && obj.sort !== 3 && obj.sort !== 5;
+    });
+
+    const imageStory = newsData.filter(obj => {
+        return obj.sort > 4 && obj.sort < 12 && obj.sort !== 6 ;
+    });
+
+    console.log(imageStory);
+
 
   return (
     <div className='gridContainer'>
@@ -22,25 +37,24 @@ function NewsContainer() {
                     <LeadStory key={leadStory.id} news={leadStory}/>
                 </div>
                 <div className='secondStoryContainer'>
-                    <NewsCard/>
+                    <NewsCard key={secondStory.id} news={secondStory}/>
                 </div>
             </div>
             <div className='secondRow'>
-                <div className='storiesContainer'>
-                    <NewsCard/>
-                </div>
-                <div className='storiesContainer'></div>
-                <div className='storiesContainer'></div>
+                {
+                    noImageStory.map(news => <div key={news.id}>
+                        <NewsCard news={news}/>
+                    </div>)
+                }
             </div>
             <div className='thirdRow'>
-                <div className='storiesWithImageContainer'>
-                    <ImageNewsCard/>
-                </div>
-                <div className='storiesWithImageContainer'></div>
-                <div className='storiesWithImageContainer'></div>
-                <div className='storiesWithImageContainer'></div>
-                <div className='storiesWithImageContainer'></div>
-                <div className='storiesWithImageContainer'></div>
+                {
+                    imageStory.map(news => 
+                        <div key={news.id} className='storiesWithImageContainer'>
+                            <ImageNewsCard news={news}/>
+                        </div>
+                    )
+                }
             </div>
         </div>
         <div className='sideContainer'>
@@ -51,7 +65,6 @@ function NewsContainer() {
                 <SideBarNewsCard/>
             </div>
             <div className='storiesWithImageContainer'>
-                <ImageNewsCard/>
             </div>
             <div className='ePaperLink'>
                 <Epaper/>

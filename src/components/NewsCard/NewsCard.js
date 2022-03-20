@@ -1,9 +1,9 @@
 import React from 'react'
 
-function NewsCard({news}) {  
+function NewsCard() {  
   return (
     <div>
-        {news.title}
+        News
     </div>
   )
 }

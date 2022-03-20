@@ -1,3 +1,9 @@
+a {
+    text-decoration: none;
+    color: black;
+}
+
+
 .gridContainer {
     display: grid;
     grid-template-columns: 3fr 1fr;
@@ -6,7 +12,6 @@
 }
 
 .newsContainer {
-    background: red;
     display: grid;
 }
 
@@ -16,11 +21,14 @@
 }
 
 .leadStoryContainer {
-    background: cyan;
+    display: grid;
+    grid-gap: 12px;
+    grid-template-columns: 6fr 7fr;
+    padding: 20px;
 }
 
 .secondStoryContainer {
-    background: black;
+    background: orange;
 
 }
 

@@ -1,0 +1,60 @@
+.gridContainer {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    min-height: 100vh;
+    padding: 0 4rem;
+}
+
+.newsContainer {
+    background: red;
+    display: grid;
+}
+
+.firstRow {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+
+.leadStoryContainer {
+    background: cyan;
+}
+
+.secondStoryContainer {
+    background: black;
+
+}
+
+.secondRow {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.storiesContainer {
+    background: green;
+    border: 2px solid black;
+}
+
+.thirdRow {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.storiesWithImageContainer {
+    background: red;
+    border: 2px solid black;
+
+}
+
+.sideContainer {
+    display: grid;
+    grid-template-rows: 2fr 1.5fr 1fr 0.75fr;
+
+}
+
+.adContainer {
+    background: blue;
+}
+
+.sideNewsContainer {
+    background: yellow;
+}

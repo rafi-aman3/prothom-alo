@@ -1,18 +1,22 @@
 import React from 'react'
+import './ImageNewsCard.css'
 
 function ImageNewsCard({news}) {
   return (
-    <div>
+    <div className='imageNewsContainer'>
+      <div className='content'>
       <h3>
         <a href='#'>
           {news.title}
         </a>
       </h3>
-      <p>
+      </div>
+      <div className='imageContainer'>
         <a href='#'>
-          {(news.description).substr(0,30) + "..."}
+          <img alt={news.title} src={news.photo}/>
+
         </a>
-      </p>
+      </div>
     </div>
   )
 }

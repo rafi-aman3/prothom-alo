@@ -1,0 +1,9 @@
+.imageNewsContainer {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+.imageContainer img {
+    width: 100%;
+}

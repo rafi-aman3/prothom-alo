@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import newsData from '../../data/data.json'; 
 import Ad from '../Ad/Ad';
-import Epaper from '../Epaper/Epaper';
 import ImageNewsCard from '../ImageNewsCard/ImageNewsCard';
 import LeadStory from '../LeadStory/LeadStory';
 import NewsCard from '../NewsCard/NewsCard';
@@ -26,8 +25,13 @@ function NewsContainer() {
         return obj.sort > 4 && obj.sort < 12 && obj.sort !== 6 ;
     });
 
-    console.log(imageStory);
+    const sideStory = newsData.find(obj => {
+        return obj.sort === 12;
+    });
 
+    const sideNews = newsData.find(obj => {
+        return obj.sort === 13;
+    })
 
   return (
     <div className='gridContainer'>
@@ -62,12 +66,10 @@ function NewsContainer() {
                 <Ad/>
             </div>
             <div className='sideNewsContainer'>
-                <SideBarNewsCard/>
+                <SideBarNewsCard news={sideStory} key={sideStory.id}/>
             </div>
             <div className='storiesWithImageContainer'>
-            </div>
-            <div className='ePaperLink'>
-                <Epaper/>
+                <ImageNewsCard key={sideNews.id} news={sideNews}/>
             </div>
         </div>
     </div>
